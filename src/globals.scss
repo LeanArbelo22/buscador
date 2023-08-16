@@ -23,10 +23,6 @@ body {
   font-family: $font;
   color: $color1;
   font-size: $size1;
-
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -36,8 +32,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  //align-items: center;
-  //justify-content: space-around;
 }
 
 @mixin mobile {
