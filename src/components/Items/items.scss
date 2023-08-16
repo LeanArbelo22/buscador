@@ -18,6 +18,10 @@
       grid-template-columns: auto;
       gap: 20px;
     }
+
+    .loader {
+      animation: blink 1s infinite ease-in-out;
+    }
   }
 
   .separator {
@@ -36,5 +40,19 @@
       color: $color2;
       user-select: none;
     }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
