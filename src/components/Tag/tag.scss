@@ -1,0 +1,23 @@
+@import '../../globals.scss';
+
+.tag {
+  width: fit-content;
+  height: 24px;
+  background-color: $color1;
+  color: $color3;
+  font-size: $size2;
+
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  border-radius: 8px;
+  padding: 1px 8px;
+
+  user-select: none;
+
+  i, svg {
+    font-size: 10px;
+    cursor: pointer;
+  }
+}

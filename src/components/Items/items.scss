@@ -1,0 +1,40 @@
+@import '../../globals.scss';
+
+.items {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+
+    @include mobile {
+      grid-template-columns: auto;
+      gap: 20px;
+    }
+  }
+
+  .separator {
+    width: 100%;
+
+    .line {
+      margin: auto;
+      width: 98%;
+      height: 1px;
+      background: $color3;
+      margin-bottom: 13px;
+    }
+
+    .total {
+      font-size: $size2;
+      color: $color2;
+      user-select: none;
+    }
+  }
+}

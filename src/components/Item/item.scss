@@ -1,0 +1,72 @@
+@import '../../globals.scss';
+
+.item {
+  display: flex;
+  cursor: pointer;
+
+  .imgContainer {
+    width: 15vw;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 rgba(52, 52, 52, 0.251);
+    background-color: $color4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      min-width: 20vw;
+      margin-bottom: 24px;
+    }
+
+    .image {
+      width: 15vw;
+      padding: 10px;
+      border-radius: 8px;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+
+      @include mobile {
+        padding: 5px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .infoContainer {
+    margin: 36px 24px;
+
+    @include mobile {
+      margin: 0;
+      margin-left: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      text-transform: uppercase;
+      font-size: $size1;
+      margin-bottom: 5px;
+    }
+
+    .code,
+    .price {
+      color: $color2;
+      font-size: $size2;
+    }
+
+    .price {
+      margin-top: 20px;
+
+      @include mobile {
+        margin-top: 10px;
+      }
+
+      & span {
+        margin-left: 10px;
+        color: $color1;
+        font-size: $size1;
+        font-weight: 500;
+      }
+    }
+  }
+}
