@@ -4,6 +4,10 @@
   display: flex;
   cursor: pointer;
 
+  @include mobile {
+    margin-bottom: 24px;
+  }
+
   .imgContainer {
     width: 15vw;
     border-radius: 8px;
@@ -15,7 +19,6 @@
 
     @include mobile {
       min-width: 20vw;
-      margin-bottom: 24px;
     }
 
     .image {
