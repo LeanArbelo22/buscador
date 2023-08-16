@@ -5,7 +5,7 @@ const initialState = {
   value: "",
   loading: false,
   initialData,
-  filteredData: initialData, // Comienza con los resultados iniciales
+  filteredData: initialData,
 };
 
 const searchSlice = createSlice({
