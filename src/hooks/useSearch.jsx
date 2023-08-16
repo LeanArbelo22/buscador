@@ -1,9 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setValue, setFilteredData } from "../store/slices/searchSlice";
+import {
+  setValue,
+  setFilteredData,
+  setIsLoading,
+} from "../store/slices/searchSlice";
 import initialData from "../data";
 
 const useSearch = () => {
-  const { value, filteredData } = useSelector((state) => state.search);
+  const { value, filteredData, loading } = useSelector((state) => state.search);
   const dispatch = useDispatch();
 
   const updateSearch = (newValue) => {
@@ -11,6 +15,7 @@ const useSearch = () => {
   };
 
   const search = () => {
+    dispatch(setIsLoading(true));
     setTimeout(() => {
       if (value === "") {
         dispatch(setFilteredData(initialData));
@@ -20,10 +25,11 @@ const useSearch = () => {
         );
         dispatch(setFilteredData(filteredResults));
       }
+      dispatch(setIsLoading(false));
     }, 3000);
   };
 
-  return { value, filteredData, updateSearch, search };
+  return { value, filteredData, updateSearch, search, loading };
 };
 
 export default useSearch;

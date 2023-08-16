@@ -3,23 +3,27 @@ import Item from "../Item/Item";
 import "./items.scss";
 
 const Items = () => {
-  const { filteredData } = useSearch();
+  const { filteredData, loading: isLoading } = useSearch();
+
+  const loader = <h3>Cargando resultados...</h3>;
 
   return (
     <div className='items'>
       <div className='results'>
-        {filteredData.map((item) => {
-          return (
-            <Item
-              key={item.id}
-              img={item.img}
-              alt={`Imagen de ${item.name}`}
-              name={item.name}
-              code={item.code}
-              price={item.price}
-            />
-          );
-        })}
+        {isLoading
+          ? loader
+          : filteredData.map((item) => {
+              return (
+                <Item
+                  key={item.id}
+                  img={item.img}
+                  alt={`Imagen de ${item.name}`}
+                  name={item.name}
+                  code={item.code}
+                  price={item.price}
+                />
+              );
+            })}
       </div>
       <div className='separator'>
         <div className='line'></div>
