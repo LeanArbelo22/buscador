@@ -5,7 +5,7 @@ import "./items.scss";
 const Items = () => {
   const { filteredData, loading: isLoading } = useSearch();
 
-  const loader = <h3 className="loader">Cargando resultados...</h3>;
+  const loader = <h3 className='loader'>Cargando resultados...</h3>;
 
   return (
     <div className='items'>

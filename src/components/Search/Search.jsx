@@ -10,7 +10,8 @@ const Search = () => {
 
   const handleInputChange = (e) => updateSearch(e.target.value);
 
-  const handleSearchClick = () => {
+  const handleSearchClick = (e) => {
+    e.preventDefault();
     search();
 
     if (value) {
@@ -26,7 +27,7 @@ const Search = () => {
 
   return (
     <div className='search'>
-      <div className='searchBox'>
+      <form className='searchBox'>
         <input
           type='text'
           value={value}
@@ -38,7 +39,7 @@ const Search = () => {
         <button type='submit' onClick={handleSearchClick} className='searchBtn'>
           <AiOutlineSearch /> Buscar
         </button>
-      </div>
+      </form>
 
       <div className='searchTags'>
         {tags.map((tag, i) => (
